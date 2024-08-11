@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cyq0s3h7st27n"]
 
-[ext_resource type="Script" path="res://scenes/puente_levadizo.gd" id="1_p65cw"]
+[ext_resource type="Script" path="res://scripts/puente_levadizo.gd" id="1_p65cw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7j8yc"]
 size = Vector2(106, 20)

@@ -2,9 +2,8 @@ extends CharacterBody2D
 #export muestra la variable en el inspector
 @export var move_speed = 40
 @export var gravity = 30
-@export var jumpspeed=-300
-#agrega booleano if true if false, si esta mirando a la derecha gira izquierda y viceversa
-var is_facing_right = true
+@export var jumpspeed=-400
+@export var current_level:Node2D
 
 
 func _physics_process(delta):
@@ -25,3 +24,5 @@ func _physics_process(delta):
 		$Sprite2D.flip_h= false
 #en objetos con fisica colliders usar 1:1 escala
 
+func eat_fruit():
+	current_level.add_score(1)
