@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dm1ixg5dbosxb"]
+
+[ext_resource type="Script" path="res://scenes/maincharacter.gd" id="1_8xfbx"]
+[ext_resource type="Texture2D" uid="uid://dfgr071a8d18" path="res://assets/aeiou.PNG" id="2_32m2e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjsjb"]
+size = Vector2(76.7845, 77)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tuh1w"]
+
+[node name="Wolf" type="CharacterBody2D"]
+script = ExtResource("1_8xfbx")
+move_speed = 200
+gravity = 400
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.999989, -36)
+scale = Vector2(0.408602, 0.447059)
+texture = ExtResource("2_32m2e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.999985, -36.5)
+shape = SubResource("RectangleShape2D_bjsjb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tuh1w")

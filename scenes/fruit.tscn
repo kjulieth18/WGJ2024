@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://dk0ch1yjw73ec"]
+
+[ext_resource type="Texture2D" uid="uid://c7lfopv7s5ss3" path="res://assets/applemap.PNG" id="1_b0y6n"]
+[ext_resource type="Script" path="res://scenes/fruit_interaction.gd" id="2_1vreb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q1ymm"]
+radius = 24.1868
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bk07g"]
+atlas = ExtResource("1_b0y6n")
+region = Rect2(132, 123, 132, 123)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6nhv"]
+atlas = ExtResource("1_b0y6n")
+region = Rect2(132, 0, 132, 123)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxylq"]
+atlas = ExtResource("1_b0y6n")
+region = Rect2(0, 123, 132, 123)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjx5q"]
+atlas = ExtResource("1_b0y6n")
+region = Rect2(0, 0, 132, 123)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a6618"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bk07g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6nhv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxylq")
+}],
+"loop": false,
+"name": &"fruit_collected",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjx5q")
+}],
+"loop": true,
+"name": &"fruit_idle",
+"speed": 5.0
+}]
+
+[node name="Area2Dfruit" type="Area2D"]
+script = ExtResource("2_1vreb")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_q1ymm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1.5, 0.5)
+scale = Vector2(0.371212, 0.414634)
+sprite_frames = SubResource("SpriteFrames_a6618")
+animation = &"fruit_collected"
+autoplay = "fruit_idle"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,51 +1,81 @@
-[gd_scene load_steps=6 format=3 uid="uid://cl582h237qgx1"]
+[gd_scene load_steps=11 format=3 uid="uid://cl582h237qgx1"]
 
-[ext_resource type="Script" path="res://scenes/maincharacter.gd" id="1_3rjj8"]
+[ext_resource type="PackedScene" uid="uid://dm1ixg5dbosxb" path="res://scenes/character.tscn" id="1_uj273"]
 [ext_resource type="Texture2D" uid="uid://b48j2larm8763" path="res://icon.svg" id="1_xq7h5"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjsjb"]
-size = Vector2(76.7845, 77)
+[ext_resource type="PackedScene" uid="uid://bagniaeqrmvyh" path="res://scenes/levadizo_left.tscn" id="3_3ol0g"]
+[ext_resource type="PackedScene" uid="uid://hy1bo4uejb6w" path="res://scenes/ball_push.tscn" id="3_cqlc2"]
+[ext_resource type="PackedScene" uid="uid://cyq0s3h7st27n" path="res://scenes/levadizo_right.tscn" id="4_jkjbk"]
+[ext_resource type="PackedScene" uid="uid://dk0ch1yjw73ec" path="res://scenes/fruit.tscn" id="5_pw6ed"]
+[ext_resource type="Script" path="res://scenes/Area2Dcheckpoint.gd" id="7_6tpgh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_41mr2"]
 size = Vector2(227, 29)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_lo636"]
-radius = 13.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1i32v"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jg0px"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"fruit_collected",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"fruit_idle",
+"speed": 5.0
+}]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(-104, -159)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(36.5, 134)
-script = ExtResource("1_3rjj8")
-move_speed = 500
+[node name="Wolf" parent="." instance=ExtResource("1_uj273")]
+position = Vector2(201, 266)
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(30.5231, -5.05264)
-scale = Vector2(0.59, 0.59)
-texture = ExtResource("1_xq7h5")
+[node name="floor" type="Sprite2D" parent="."]
+position = Vector2(137, 119)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(33.5, -4.5)
-shape = SubResource("RectangleShape2D_bjsjb")
+[node name="StaticBody2D" type="StaticBody2D" parent="floor"]
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/StaticBody2D"]
 position = Vector2(112, 206)
 shape = SubResource("RectangleShape2D_41mr2")
 
-[node name="Icon" type="Sprite2D" parent="Sprite2D2/StaticBody2D/CollisionShape2D"]
+[node name="Icon" type="Sprite2D" parent="floor/StaticBody2D/CollisionShape2D"]
 position = Vector2(-29.5, 289.5)
 texture = ExtResource("1_xq7h5")
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(142, 160)
+position = Vector2(279, 279)
 scale = Vector2(0.507813, 0.59375)
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(142, 160)
+[node name="ball_push" parent="." instance=ExtResource("3_cqlc2")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-shape = SubResource("CircleShape2D_lo636")
+[node name="levadizo_left" parent="." instance=ExtResource("3_3ol0g")]
+
+[node name="levadizo_right" parent="." instance=ExtResource("4_jkjbk")]
+
+[node name="Area2Dfruit" parent="." instance=ExtResource("5_pw6ed")]
+position = Vector2(438, 183)
+
+[node name="Area2Dcheckpoint" type="Area2D" parent="."]
+position = Vector2(562, 288)
+script = ExtResource("7_6tpgh")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2Dcheckpoint"]
+shape = SubResource("RectangleShape2D_1i32v")
+debug_color = Color(0.668383, 0.390813, 0.839407, 0.42)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2Dcheckpoint"]
+sprite_frames = SubResource("SpriteFrames_jg0px")
+animation = &"fruit_idle"
+
+[node name="Area2Dfruit2" parent="." instance=ExtResource("5_pw6ed")]
+position = Vector2(862, 420)
+
+[node name="Area2Dfruit3" parent="." instance=ExtResource("5_pw6ed")]
+position = Vector2(530, 287)
+
+[node name="Area2Dfruit4" parent="." instance=ExtResource("5_pw6ed")]
+position = Vector2(268, 138)

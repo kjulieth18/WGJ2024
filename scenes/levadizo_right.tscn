@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyq0s3h7st27n"]
+
+[ext_resource type="Script" path="res://scenes/puente_levadizo.gd" id="1_p65cw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7j8yc"]
+size = Vector2(106, 20)
+
+[sub_resource type="Animation" id="Animation_pio3d"]
+resource_name = "rotarderecha"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.5, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -1.39626, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_7mfi7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c346s"]
+_data = {
+"RESET": SubResource("Animation_7mfi7"),
+"rotarderecha": SubResource("Animation_pio3d")
+}
+
+[node name="levadizo_right" type="StaticBody2D"]
+position = Vector2(578, 319)
+script = ExtResource("1_p65cw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-43, 0)
+shape = SubResource("RectangleShape2D_7j8yc")
+metadata/_edit_group_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_c346s")
+}
