@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cl582h237qgx1"]
+[gd_scene load_steps=20 format=3 uid="uid://cl582h237qgx1"]
 
 [ext_resource type="Script" path="res://scenes/uiworld.gd" id="1_271hj"]
 [ext_resource type="PackedScene" uid="uid://dm1ixg5dbosxb" path="res://scenes/character.tscn" id="1_uj273"]
@@ -8,8 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://dk0ch1yjw73ec" path="res://scenes/fruit.tscn" id="5_pw6ed"]
 [ext_resource type="Script" path="res://scripts/Area2Dcheckpoint.gd" id="7_6tpgh"]
 [ext_resource type="Texture2D" uid="uid://b1ampr4yrrhju" path="res://assets/terrain/Background.png" id="7_72nna"]
+[ext_resource type="Texture2D" uid="uid://d4i71h3653da7" path="res://assets/terrain/game_background_4/layers/battleground.png" id="8_q08hc"]
+[ext_resource type="Texture2D" uid="uid://40jhddlmvtf0" path="res://assets/terrain/game_background_4/layers/ground_decor.png" id="9_jkg6b"]
 [ext_resource type="PackedScene" uid="uid://bwvkamqjoqtxi" path="res://scenes/ui.tscn" id="9_svdjd"]
+[ext_resource type="Texture2D" uid="uid://dwndsrldvkvjc" path="res://assets/terrain/game_background_4/layers/back_land.png" id="10_dgquq"]
 [ext_resource type="TileSet" uid="uid://b7i1j30wdw52n" path="res://assets/terrain/tileset.tres" id="10_mjjix"]
+[ext_resource type="Texture2D" uid="uid://cepj2bdlvjiv0" path="res://assets/terrain/game_background_4/layers/back_decor.png" id="11_odad0"]
+[ext_resource type="Texture2D" uid="uid://c485v4jpmc6xl" path="res://assets/terrain/game_background_4/layers/front_decor.png" id="12_qgk2c"]
+[ext_resource type="AudioStream" uid="uid://ccxulwh08x0pe" path="res://assets/Sounds/Tema A -final.wav" id="16_nique"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_41mr2"]
 size = Vector2(296.5, 29)
@@ -77,12 +83,52 @@ debug_color = Color(0.668383, 0.390813, 0.839407, 0.42)
 sprite_frames = SubResource("SpriteFrames_jg0px")
 animation = &"fruit_idle"
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 1)
+
+[node name="Battleground" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(180, 168)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("8_q08hc")
+
+[node name="GroundDecor" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(180, 168)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("9_jkg6b")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 1)
+
+[node name="BackLand" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(180, 168)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("10_dgquq")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 1)
+
+[node name="BackDecor" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(180, 168)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("11_odad0")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1.2, 1)
+
+[node name="FrontDecor" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(180, 168)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("12_qgk2c")
+
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 show_behind_parent = true
-offset_left = -1107.0
-offset_top = -397.0
-offset_right = 2293.0
-offset_bottom = 595.0
+offset_left = -1198.0
+offset_top = -320.0
+offset_right = 2202.0
+offset_bottom = 672.0
 texture = ExtResource("7_72nna")
 expand_mode = 1
 
@@ -90,17 +136,19 @@ expand_mode = 1
 unique_name_in_owner = true
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2(-117, 204)
+position = Vector2(426, 115)
 scale = Vector2(0.5, 0.5)
 tile_set = ExtResource("10_mjjix")
 format = 2
 layer_0/tile_data = PackedInt32Array(131072, 2, 0, 131073, 65538, 0, 131074, 131074, 0, 196609, 65538, 2, 196608, 2, 2, 131069, 2, 3, 131070, 65538, 3, 131071, 131074, 3, 262148, 2, 1, 196612, 327682, 4, 131076, 2, 1, 65540, 2, 0, 65541, 131074, 0, 131077, 131074, 1, -131075, 2, 2, -131074, 65538, 2, -131073, 65538, 2, -196608, 65538, 2, -196607, 65538, 2, -196606, 65538, 2, -196605, 65538, 2, -196604, 131074, 2, -262140, 131074, 1, -196611, 2, 1, -196610, 65538, 1, -196609, 65538, 1, -262144, 65538, 1, -262143, 65538, 1, -262142, 65538, 1, -262141, 65538, 1, -262146, 65538, 0, -262145, 65538, 0, -327680, 65538, 0, -327679, 65538, 0, -327678, 65538, 0, -327677, 65538, 0, -327676, 131074, 0, -262147, 2, 0, 196611, 262146, 4, 131067, 327682, 5, 131066, 262146, 5, 196603, 327682, 6, 196602, 262146, 6)
 
 [node name="TileMap2" type="TileMap" parent="."]
-position = Vector2(63, 61)
+position = Vector2(-494, -813)
 scale = Vector2(0.5, 0.5)
 tile_set = ExtResource("10_mjjix")
 format = 2
 layer_0/tile_data = PackedInt32Array(327673, 65538, 1, 327674, 65538, 1, 327672, 65538, 1, 327675, 65538, 1, 327676, 65538, 1, 327677, 65538, 1, 327678, 65538, 1, 262157, 65538, 1)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_nique")
+autoplay = true

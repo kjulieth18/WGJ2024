@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cypax20f4ulxn"
+path="res://.godot/imported/TEMA B - FINAL.wav-23d03994809d9e8c71c151d15988991d.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/TEMA B - FINAL.wav"
+dest_files=["res://.godot/imported/TEMA B - FINAL.wav-23d03994809d9e8c71c151d15988991d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

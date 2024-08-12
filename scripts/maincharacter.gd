@@ -19,9 +19,14 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	if input_axis <0:
-		$Sprite2D.flip_h = true
+		$AnimatedSprite2D.flip_h = true
 	if input_axis >0:
-		$Sprite2D.flip_h= false
+		$AnimatedSprite2D.flip_h = false
+	if velocity.x == 0:
+		$AnimatedSprite2D.play("idle")
+	else:
+		$AnimatedSprite2D.play("walk")
+		
 #en objetos con fisica colliders usar 1:1 escala
 
 func eat_fruit():
