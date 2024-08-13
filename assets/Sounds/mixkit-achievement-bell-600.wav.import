@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b0ty0ukqtygsq"
-path="res://.godot/imported/mixkit-achievement-bell-600.wav-a1e3cff281f1d63bcb05cf63c5be9316.sample"
+path="res://.godot/imported/mixkit-achievement-bell-600.wav-d5df8df8482701e3c5ff01826be0e42c.sample"
 
 [deps]
 
-source_file="res://assets/mixkit-achievement-bell-600.wav"
-dest_files=["res://.godot/imported/mixkit-achievement-bell-600.wav-a1e3cff281f1d63bcb05cf63c5be9316.sample"]
+source_file="res://assets/Sounds/mixkit-achievement-bell-600.wav"
+dest_files=["res://.godot/imported/mixkit-achievement-bell-600.wav-d5df8df8482701e3c5ff01826be0e42c.sample"]
 
 [params]
 

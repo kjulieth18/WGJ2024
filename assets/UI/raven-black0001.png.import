@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwflwc5s2w04r"
-path="res://.godot/imported/raven-black0014.png-2fae5f4963b1d92a0d77bcd8c43353db.ctex"
+uid="uid://bughbbe7aeyll"
+path="res://.godot/imported/raven-black0001.png-af3314b8b34d06f54f3f0491313fe819.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/raven-black0014.png"
-dest_files=["res://.godot/imported/raven-black0014.png-2fae5f4963b1d92a0d77bcd8c43353db.ctex"]
+source_file="res://assets/UI/raven-black0001.png"
+dest_files=["res://.godot/imported/raven-black0001.png-af3314b8b34d06f54f3f0491313fe819.ctex"]
 
 [params]
 

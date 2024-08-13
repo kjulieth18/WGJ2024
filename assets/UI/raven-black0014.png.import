@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df3hq8x3r41f0"
-path="res://.godot/imported/applemapzero.PNG-7729da9ec0e401a39f2e4ffc2fc10d72.ctex"
+uid="uid://dwflwc5s2w04r"
+path="res://.godot/imported/raven-black0014.png-6903db6bd83deaf3eddb83602f1893cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/applemapzero.PNG"
-dest_files=["res://.godot/imported/applemapzero.PNG-7729da9ec0e401a39f2e4ffc2fc10d72.ctex"]
+source_file="res://assets/UI/raven-black0014.png"
+dest_files=["res://.godot/imported/raven-black0014.png-6903db6bd83deaf3eddb83602f1893cb.ctex"]
 
 [params]
 

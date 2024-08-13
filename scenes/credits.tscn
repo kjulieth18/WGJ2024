@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm6gk0xdgaixq"]
+
+[ext_resource type="AudioStream" uid="uid://ccxulwh08x0pe" path="res://assets/Sounds/Tema A -final.wav" id="1_5n01c"]
+[ext_resource type="Texture2D" uid="uid://boykmr4cn7g6m" path="res://assets/terrain/game_background_4/game_background_4.png" id="2_hag3a"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_5n01c")
+volume_db = 4.952
+autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 3840.0
+offset_bottom = 2160.0
+texture = ExtResource("2_hag3a")

@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwvkamqjoqtxi"]
+[gd_scene load_steps=5 format=3 uid="uid://bwvkamqjoqtxi"]
 
 [ext_resource type="Script" path="res://UI.gd" id="1_g80s6"]
+[ext_resource type="Texture2D" uid="uid://dhu2oejuvkhmb" path="res://assets/UI/Button-1.png" id="2_slf5d"]
+[ext_resource type="FontFile" uid="uid://cd8n2gliuelxv" path="res://assets/fonts/KIdDOS-Regular.ttf" id="2_xiydp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_m407i"]
 font_size = 30
@@ -24,10 +26,11 @@ unique_name_in_owner = true
 layout_mode = 2
 offset_left = 53.0
 offset_top = 20.0
-offset_right = 195.0
-offset_bottom = 62.0
+offset_right = 194.0
+offset_bottom = 65.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_xiydp")
 text = "Puntos : 0"
 label_settings = SubResource("LabelSettings_m407i")
 
@@ -36,14 +39,19 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -163.0
-offset_top = 22.0
-offset_right = -21.0
-offset_bottom = 73.0
+offset_left = -382.0
+offset_top = 20.0
+offset_bottom = 101.0
 grow_horizontal = 0
 size_flags_horizontal = 8
 size_flags_vertical = 0
-text = "MENU PRINCIPAL
+theme_override_fonts/font = ExtResource("2_xiydp")
+theme_override_font_sizes/font_size = 50
+text = "Menu Principal
 "
+icon = ExtResource("2_slf5d")
+flat = true
+text_overrun_behavior = 1
+icon_alignment = 1
 
 [connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]

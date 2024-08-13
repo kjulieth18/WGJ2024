@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dk3sb0oo5rul"]
 
-[ext_resource type="Texture2D" uid="uid://bughbbe7aeyll" path="res://assets/raven-black0001.png" id="1_3jnjp"]
-[ext_resource type="Texture2D" uid="uid://dwflwc5s2w04r" path="res://assets/raven-black0014.png" id="2_p4s6u"]
+[ext_resource type="Texture2D" uid="uid://bughbbe7aeyll" path="res://assets/UI/raven-black0001.png" id="1_3jnjp"]
+[ext_resource type="Texture2D" uid="uid://dwflwc5s2w04r" path="res://assets/UI/raven-black0014.png" id="2_p4s6u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_28wq7"]
 

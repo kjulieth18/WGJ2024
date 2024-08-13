@@ -1,6 +1,6 @@
-[gd_scene load_steps=20 format=3 uid="uid://cl582h237qgx1"]
+[gd_scene load_steps=21 format=3 uid="uid://cl582h237qgx1"]
 
-[ext_resource type="Script" path="res://scenes/uiworld.gd" id="1_271hj"]
+[ext_resource type="Script" path="res://scripts/uiworld.gd" id="1_271hj"]
 [ext_resource type="PackedScene" uid="uid://dm1ixg5dbosxb" path="res://scenes/character.tscn" id="1_uj273"]
 [ext_resource type="PackedScene" uid="uid://bagniaeqrmvyh" path="res://scenes/levadizo_left.tscn" id="3_3ol0g"]
 [ext_resource type="PackedScene" uid="uid://hy1bo4uejb6w" path="res://scenes/ball_push.tscn" id="3_cqlc2"]
@@ -15,10 +15,12 @@
 [ext_resource type="TileSet" uid="uid://b7i1j30wdw52n" path="res://assets/terrain/tileset.tres" id="10_mjjix"]
 [ext_resource type="Texture2D" uid="uid://cepj2bdlvjiv0" path="res://assets/terrain/game_background_4/layers/back_decor.png" id="11_odad0"]
 [ext_resource type="Texture2D" uid="uid://c485v4jpmc6xl" path="res://assets/terrain/game_background_4/layers/front_decor.png" id="12_qgk2c"]
-[ext_resource type="AudioStream" uid="uid://ccxulwh08x0pe" path="res://assets/Sounds/Tema A -final.wav" id="16_nique"]
+[ext_resource type="AudioStream" uid="uid://cypax20f4ulxn" path="res://assets/Sounds/TEMA B - FINAL.wav" id="16_rjggh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_41mr2"]
 size = Vector2(296.5, 29)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mi253"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1i32v"]
 
@@ -62,6 +64,7 @@ scale = Vector2(0.507813, 0.59375)
 position = Vector2(360, 219)
 
 [node name="levadizo_left" parent="." instance=ExtResource("3_3ol0g")]
+material = SubResource("CanvasItemMaterial_mi253")
 position = Vector2(418, 346)
 
 [node name="levadizo_right" parent="." instance=ExtResource("4_jkjbk")]
@@ -140,15 +143,15 @@ position = Vector2(426, 115)
 scale = Vector2(0.5, 0.5)
 tile_set = ExtResource("10_mjjix")
 format = 2
-layer_0/tile_data = PackedInt32Array(131072, 2, 0, 131073, 65538, 0, 131074, 131074, 0, 196609, 65538, 2, 196608, 2, 2, 131069, 2, 3, 131070, 65538, 3, 131071, 131074, 3, 262148, 2, 1, 196612, 327682, 4, 131076, 2, 1, 65540, 2, 0, 65541, 131074, 0, 131077, 131074, 1, -131075, 2, 2, -131074, 65538, 2, -131073, 65538, 2, -196608, 65538, 2, -196607, 65538, 2, -196606, 65538, 2, -196605, 65538, 2, -196604, 131074, 2, -262140, 131074, 1, -196611, 2, 1, -196610, 65538, 1, -196609, 65538, 1, -262144, 65538, 1, -262143, 65538, 1, -262142, 65538, 1, -262141, 65538, 1, -262146, 65538, 0, -262145, 65538, 0, -327680, 65538, 0, -327679, 65538, 0, -327678, 65538, 0, -327677, 65538, 0, -327676, 131074, 0, -262147, 2, 0, 196611, 262146, 4, 131067, 327682, 5, 131066, 262146, 5, 196603, 327682, 6, 196602, 262146, 6)
+layer_0/tile_data = PackedInt32Array(131072, 2, 0, 131073, 65538, 0, 131074, 131074, 0, 196609, 65538, 2, 196608, 2, 2, 131069, 2, 3, 131070, 65538, 3, 131071, 131074, 3, 262148, 65538, 0, 196612, 327682, 4, 131076, 2, 1, 65540, 2, 0, 65541, 131074, 0, 131077, 131074, 1, -131075, 2, 2, -131074, 65538, 2, -131073, 65538, 2, -196608, 65538, 2, -196607, 65538, 2, -196606, 65538, 2, -196605, 65538, 2, -196604, 131074, 2, -262140, 131074, 1, -196611, 2, 1, -196610, 65538, 1, -196609, 65538, 1, -262144, 65538, 1, -262143, 65538, 1, -262142, 65538, 1, -262141, 65538, 1, -262146, 65538, 0, -262145, 65538, 0, -327680, 65538, 0, -327679, 65538, 0, -327678, 65538, 0, -327677, 65538, 0, -327676, 131074, 0, -262147, 2, 0, 196611, 262146, 4, 131067, 327682, 5, 131066, 262146, 5, 196603, 327682, 6, 196602, 262146, 6, -65541, 393218, 0, -65542, 65538, 0, -65540, 393218, 0, 327674, 65538, 0, 327675, 65538, 0, 327676, 65538, 0, 327677, 65538, 0, 327678, 65538, 0, 327679, 65538, 0, 262144, 65538, 0, 262145, 65538, 0, 262146, 65538, 0, 262147, 65538, 0, 262149, 65538, 0, 262150, 65538, 0, 262151, 65538, 0, 262152, 65538, 0, 262153, 65538, 0, 262154, 65538, 0, 262155, 65538, 0, 262137, 131074, 1, 196601, 131074, 1, 131065, 131074, 1, 65529, 131074, 1, -7, 65538, 1, -65543, 131074, 1, 327673, 262146, 4)
 
 [node name="TileMap2" type="TileMap" parent="."]
 position = Vector2(-494, -813)
 scale = Vector2(0.5, 0.5)
 tile_set = ExtResource("10_mjjix")
 format = 2
-layer_0/tile_data = PackedInt32Array(327673, 65538, 1, 327674, 65538, 1, 327672, 65538, 1, 327675, 65538, 1, 327676, 65538, 1, 327677, 65538, 1, 327678, 65538, 1, 262157, 65538, 1)
+layer_0/tile_data = PackedInt32Array(393217, 65538, 2, 393218, 65538, 2, 393219, 65538, 2, 393220, 65538, 2, 393221, 65538, 2, 393222, 65538, 2, 393223, 65538, 2, 393224, 65538, 2, 393225, 65538, 2, 393227, 65538, 2, 393226, 65538, 2, 720897, 196610, 3, 720896, 262146, 4)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("16_nique")
+stream = ExtResource("16_rjggh")
 autoplay = true

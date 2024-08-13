@@ -1,20 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://bx2gp6h44nsto"]
+[gd_scene load_steps=8 format=3 uid="uid://bx2gp6h44nsto"]
 
-[ext_resource type="Script" path="res://scenes/example_menu.gd" id="1_ygll5"]
+[ext_resource type="Script" path="res://scripts/example_menu.gd" id="1_ygll5"]
 [ext_resource type="Texture2D" uid="uid://6rcs1043steq" path="res://assets/UI/start.png" id="2_yybks"]
-[ext_resource type="Texture2D" uid="uid://do0m1pqm2ake8" path="res://assets/UI/Button-2.png" id="3_18pk7"]
-[ext_resource type="Texture2D" uid="uid://dhu2oejuvkhmb" path="res://assets/UI/Button-1.png" id="4_nqdxy"]
-[ext_resource type="Texture2D" uid="uid://bj52kslvwi8y7" path="res://assets/UI/Button.png" id="5_eqx43"]
+[ext_resource type="PackedScene" uid="uid://b7s2gppaih8bq" path="res://scenes/button_play.tscn" id="3_7xsqv"]
 [ext_resource type="AudioStream" uid="uid://ki6py7d57rwj" path="res://assets/Sounds/Introducion.wav" id="6_12l0e"]
+[ext_resource type="AudioStream" uid="uid://b0ty0ukqtygsq" path="res://assets/Sounds/mixkit-achievement-bell-600.wav" id="6_enxk8"]
+[ext_resource type="Texture2D" uid="uid://dac7xiy2g8p8u" path="res://assets/UI/66859a9c5bdcaf03bfb3cd88_WGJLogo512.png" id="9_cfet5"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vekeu"]
-texture = ExtResource("3_18pk7")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_akclg"]
-texture = ExtResource("4_nqdxy")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8sbo5"]
-texture = ExtResource("5_eqx43")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xa3ig"]
 
 [node name="ExampleMenu" type="Control"]
 layout_mode = 3
@@ -24,6 +17,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ygll5")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_12l0e")
+autoplay = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
 show_behind_parent = true
@@ -37,28 +34,63 @@ texture = ExtResource("2_yybks")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="Button" type="Button" parent="."]
+[node name="Button_play" parent="." instance=ExtResource("3_7xsqv")]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -139.0
-offset_top = 147.0
-offset_right = 140.0
-offset_bottom = 214.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-theme_override_styles/normal = SubResource("StyleBoxTexture_vekeu")
-theme_override_styles/hover = SubResource("StyleBoxTexture_akclg")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_8sbo5")
-text = "PLAY"
+anchors_preset = 7
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -131.0
+offset_top = -198.0
+offset_right = 120.0
+offset_bottom = -151.0
+grow_vertical = 0
+script = null
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_12l0e")
-autoplay = true
+[node name="wgj_icon" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(87, 560)
+scale = Vector2(0.203125, 0.203125)
+texture = ExtResource("9_cfet5")
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="Area2D" type="Area2D" parent="wgj_icon"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wgj_icon/Area2D"]
+shape = SubResource("RectangleShape2D_xa3ig")
+
+[node name="Button_Credits" parent="." instance=ExtResource("3_7xsqv")]
+layout_mode = 1
+anchors_preset = 7
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -134.0
+offset_top = -139.0
+offset_right = 117.0
+offset_bottom = -92.0
+grow_vertical = 0
+text = "Credits"
+script = null
+
+[node name="Button_Quit" parent="." instance=ExtResource("3_7xsqv")]
+layout_mode = 1
+anchors_preset = 7
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -130.0
+offset_top = -81.0
+offset_right = 121.0
+offset_bottom = -34.0
+grow_vertical = 0
+text = "Quit
+"
+script = null
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_enxk8")
+volume_db = -4.685
+
+[connection signal="mouse_entered" from="Button_play" to="." method="_on_button_play_mouse_entered"]
+[connection signal="pressed" from="Button_play" to="." method="_on_button_play_pressed"]
+[connection signal="mouse_entered" from="Button_Credits" to="." method="_on_button_credits_mouse_entered"]
+[connection signal="pressed" from="Button_Credits" to="." method="_on_button_credits_pressed"]
+[connection signal="mouse_entered" from="Button_Quit" to="." method="_on_button_quit_mouse_entered"]
+[connection signal="pressed" from="Button_Quit" to="." method="_on_button_quit_pressed"]
