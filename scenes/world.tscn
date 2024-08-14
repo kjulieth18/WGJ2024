@@ -15,7 +15,7 @@
 [ext_resource type="TileSet" uid="uid://b7i1j30wdw52n" path="res://assets/terrain/tileset.tres" id="10_mjjix"]
 [ext_resource type="Texture2D" uid="uid://cepj2bdlvjiv0" path="res://assets/terrain/game_background_4/layers/back_decor.png" id="11_odad0"]
 [ext_resource type="Texture2D" uid="uid://c485v4jpmc6xl" path="res://assets/terrain/game_background_4/layers/front_decor.png" id="12_qgk2c"]
-[ext_resource type="AudioStream" uid="uid://cypax20f4ulxn" path="res://assets/Sounds/TEMA B - FINAL.wav" id="16_rjggh"]
+[ext_resource type="AudioStream" uid="uid://ccxulwh08x0pe" path="res://assets/Sounds/Tema A -final.wav" id="16_2k1wg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_41mr2"]
 size = Vector2(296.5, 29)
@@ -153,6 +153,6 @@ format = 2
 layer_0/tile_data = PackedInt32Array(393217, 65538, 2, 393218, 65538, 2, 393219, 65538, 2, 393220, 65538, 2, 393221, 65538, 2, 393222, 65538, 2, 393223, 65538, 2, 393224, 65538, 2, 393225, 65538, 2, 393227, 65538, 2, 393226, 65538, 2, 720897, 196610, 3, 720896, 262146, 4)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("16_rjggh")
+stream = ExtResource("16_2k1wg")
 volume_db = 4.952
 autoplay = true
