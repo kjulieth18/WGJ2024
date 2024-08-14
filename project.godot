@@ -11,9 +11,12 @@ config_version=5
 [application]
 
 config/name="potion quest"
+config/description="This game was developed by Daniela Camelo, Karen Nova and Rocío Torres on the 2024 Woman Game Jam.  
+Category  Platformer
+tags werewolf."
 run/main_scene="res://scenes/example_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://assets/UI/Potion.png"
 
 [input]
 

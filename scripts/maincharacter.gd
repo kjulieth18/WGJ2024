@@ -28,6 +28,7 @@ func _physics_process(delta):
 		$AnimatedSprite2D.play("walk")
 		
 #en objetos con fisica colliders usar 1:1 escala
-
+	if velocity.y <0:
+		$AudioStreamPlayer.play()
 func eat_fruit():
 	current_level.add_score(1)

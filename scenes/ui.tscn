@@ -1,12 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwvkamqjoqtxi"]
+[gd_scene load_steps=7 format=3 uid="uid://bwvkamqjoqtxi"]
 
 [ext_resource type="Script" path="res://UI.gd" id="1_g80s6"]
-[ext_resource type="Texture2D" uid="uid://dhu2oejuvkhmb" path="res://assets/UI/Button-1.png" id="2_slf5d"]
 [ext_resource type="FontFile" uid="uid://cd8n2gliuelxv" path="res://assets/fonts/KIdDOS-Regular.ttf" id="2_xiydp"]
+[ext_resource type="Texture2D" uid="uid://bj52kslvwi8y7" path="res://assets/UI/Button.png" id="3_xmbcr"]
+[ext_resource type="AudioStream" uid="uid://lla8u6nx8jox" path="res://assets/Sounds/sfx_burbuja_boca.wav" id="5_bhdpr"]
+[ext_resource type="PackedScene" uid="uid://b7s2gppaih8bq" path="res://scenes/button_play.tscn" id="6_o2u5u"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_m407i"]
 font_size = 30
-font_color = Color(0.673903, 0.308537, 0.857966, 1)
+font_color = Color(0.95727, 0.909732, 0.988133, 1)
 shadow_size = 2
 shadow_color = Color(0, 0, 0, 0.529412)
 
@@ -21,37 +23,38 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Button" type="Sprite2D" parent="Control"]
+position = Vector2(144, 47)
+scale = Vector2(0.649733, 1)
+texture = ExtResource("3_xmbcr")
+
 [node name="Label" type="Label" parent="Control"]
 unique_name_in_owner = true
 layout_mode = 2
-offset_left = 53.0
-offset_top = 20.0
-offset_right = 194.0
-offset_bottom = 65.0
+offset_left = 78.0
+offset_top = 31.0
+offset_right = 219.0
+offset_bottom = 76.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("2_xiydp")
 text = "Puntos : 0"
 label_settings = SubResource("LabelSettings_m407i")
 
-[node name="Button" type="Button" parent="Control"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -382.0
-offset_top = 20.0
-offset_bottom = 101.0
-grow_horizontal = 0
-size_flags_horizontal = 8
-size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("2_xiydp")
-theme_override_font_sizes/font_size = 50
-text = "Menu Principal
-"
-icon = ExtResource("2_slf5d")
-flat = true
-text_overrun_behavior = 1
-icon_alignment = 1
+[node name="Button_MainMenu" parent="." instance=ExtResource("6_o2u5u")]
+anchors_preset = 7
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 286.0
+offset_top = -615.0
+offset_right = 537.0
+offset_bottom = -568.0
+grow_vertical = 0
+text = "Menu"
+script = null
 
-[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_bhdpr")
+
+[connection signal="mouse_entered" from="Button_MainMenu" to="." method="_on_button_main_menu_mouse_entered"]
+[connection signal="pressed" from="Button_MainMenu" to="." method="_on_button_main_menu_pressed"]

@@ -154,4 +154,5 @@ layer_0/tile_data = PackedInt32Array(393217, 65538, 2, 393218, 65538, 2, 393219,
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("16_rjggh")
+volume_db = 4.952
 autoplay = true

@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://dm1ixg5dbosxb"]
+[gd_scene load_steps=14 format=3 uid="uid://dm1ixg5dbosxb"]
 
 [ext_resource type="Script" path="res://scripts/maincharacter.gd" id="1_8xfbx"]
 [ext_resource type="Texture2D" uid="uid://beffufoyoyulq" path="res://assets/animacion/lobo 1.png" id="2_vc2x3"]
 [ext_resource type="Texture2D" uid="uid://d4i1jj6b78dpi" path="res://assets/animacion/SPRITESHEET/Lobo caminar.png" id="3_35xox"]
+[ext_resource type="AudioStream" uid="uid://t852by8xfjj" path="res://assets/Sounds/salto_voz_sfx.wav" id="4_egy1b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bjsjb"]
 size = Vector2(76.7845, 77)
@@ -90,3 +91,6 @@ scale = Vector2(0.542857, 0.542857)
 sprite_frames = SubResource("SpriteFrames_tuh1w")
 animation = &"walk"
 autoplay = "idle"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_egy1b")
