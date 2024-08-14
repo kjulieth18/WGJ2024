@@ -32,3 +32,4 @@ func _physics_process(delta):
 		$AudioStreamPlayer.play()
 func eat_fruit():
 	current_level.add_score(1)
+

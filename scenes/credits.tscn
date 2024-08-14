@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://cm6gk0xdgaixq"]
 
-[ext_resource type="Script" path="res://scenes/credits.gd" id="1_8for6"]
+[ext_resource type="Script" path="res://scripts/credits.gd" id="1_8for6"]
 [ext_resource type="Texture2D" uid="uid://boykmr4cn7g6m" path="res://assets/terrain/game_background_4/game_background_4.png" id="2_hag3a"]
 [ext_resource type="AudioStream" uid="uid://cypax20f4ulxn" path="res://assets/Sounds/TEMA B - FINAL.wav" id="2_iyuim"]
 [ext_resource type="PackedScene" uid="uid://b7s2gppaih8bq" path="res://scenes/button_play.tscn" id="3_xvge6"]

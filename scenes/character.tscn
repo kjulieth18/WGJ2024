@@ -78,7 +78,7 @@ gravity = 400
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(0.999989, -36)
-scale = Vector2(0.408602, 0.447059)
+scale = Vector2(0.458, 0.5)
 texture = ExtResource("2_vc2x3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

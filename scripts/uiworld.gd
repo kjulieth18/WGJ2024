@@ -12,3 +12,7 @@ func add_score(value):
 #4 exportar en midi y llevar a DAW reaper 
 #5 aplicar sfx virtual instrument LABS de spitfire. 
 #y exportar al audiostreamplayer 
+# cambios se agregaron portales que permiten cambio de posicion del jugador y evitan que salga del borde de la escena.
+#se redujo tamaño de tilemap/tileset terreno
+#tilemap2 es para decoracion y cuadros de dialogo
+#se añadio escena de controles

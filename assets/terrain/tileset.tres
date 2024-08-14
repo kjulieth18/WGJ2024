@@ -1,6 +1,14 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://b7i1j30wdw52n"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://b7i1j30wdw52n"]
 
+[ext_resource type="Texture2D" uid="uid://cbnbj27tgcqro" path="res://assets/terrain/piedras-cubiertas-de-nieve-interminable-patrón-de-pared-de.jpg" id="1_0plmh"]
 [ext_resource type="Texture2D" uid="uid://cx0m2khtevxxt" path="res://assets/terrain/_Spritesheet.png" id="1_yavhy"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ixs3k"]
+texture = ExtResource("1_0plmh")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4qfgo"]
 texture = ExtResource("1_yavhy")
@@ -204,3 +212,4 @@ texture_region_size = Vector2i(256, 256)
 tile_size = Vector2i(256, 256)
 physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_4qfgo")
+sources/0 = SubResource("TileSetAtlasSource_ixs3k")

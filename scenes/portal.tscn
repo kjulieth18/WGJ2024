@@ -1,0 +1,219 @@
+[gd_scene load_steps=30 format=3 uid="uid://ca70qcsf54871"]
+
+[ext_resource type="Script" path="res://scripts/portal.gd" id="1_a2i28"]
+[ext_resource type="Texture2D" uid="uid://crm13ocah1gmn" path="res://assets/animacion/purple_portal_sheet_elthen.png" id="1_dsncx"]
+[ext_resource type="AudioStream" uid="uid://6qcnro3dm387" path="res://assets/Sounds/conga bajo.wav" id="3_dauat"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xfk0"]
+atlas = ExtResource("1_dsncx")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5hel"]
+atlas = ExtResource("1_dsncx")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_woyu7"]
+atlas = ExtResource("1_dsncx")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ciyg"]
+atlas = ExtResource("1_dsncx")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ris5x"]
+atlas = ExtResource("1_dsncx")
+region = Rect2(256, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tkuw"]
+atlas = ExtResource("1_dsncx")
+region = Rect2(320, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ru4qp"]
+atlas = ExtResource("1_dsncx")
+region = Rect2(384, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g23g4"]
+atlas = ExtResource("1_dsncx")
+region = Rect2(448, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrkuu"]
+atlas = ExtResource("1_dsncx")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghjro"]
+atlas = ExtResource("1_dsncx")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2534"]
+atlas = ExtResource("1_dsncx")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inr08"]
+atlas = ExtResource("1_dsncx")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awgqx"]
+atlas = ExtResource("1_dsncx")
+region = Rect2(256, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asj38"]
+atlas = ExtResource("1_dsncx")
+region = Rect2(320, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uk6ie"]
+atlas = ExtResource("1_dsncx")
+region = Rect2(384, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b88th"]
+atlas = ExtResource("1_dsncx")
+region = Rect2(448, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycwv7"]
+atlas = ExtResource("1_dsncx")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2l3c0"]
+atlas = ExtResource("1_dsncx")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhhoq"]
+atlas = ExtResource("1_dsncx")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qx3or"]
+atlas = ExtResource("1_dsncx")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7161"]
+atlas = ExtResource("1_dsncx")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4n43o"]
+atlas = ExtResource("1_dsncx")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fooqv"]
+atlas = ExtResource("1_dsncx")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ph0ms"]
+atlas = ExtResource("1_dsncx")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ul4m7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xfk0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5hel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_woyu7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ciyg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ris5x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tkuw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ru4qp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g23g4")
+}],
+"loop": true,
+"name": &"enter",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrkuu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghjro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2534")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_inr08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awgqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asj38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uk6ie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b88th")
+}],
+"loop": true,
+"name": &"exit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycwv7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2l3c0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhhoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qx3or")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7161")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4n43o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fooqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ph0ms")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_68cr2"]
+size = Vector2(14.5, 15.3333)
+
+[node name="portal" type="Area2D"]
+script = ExtResource("1_a2i28")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_ul4m7")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.500001, 9)
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_68cr2")
+
+[node name="Marker2D_destination" type="Marker2D" parent="."]
+position = Vector2(-262, -5)
+
+[node name="portal_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_dauat")
+volume_db = 21.895
+pitch_scale = 0.01
+attenuation = 0.225313
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

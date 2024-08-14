@@ -16,7 +16,7 @@ Category  Platformer
 tags werewolf."
 run/main_scene="res://scenes/example_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://assets/UI/Potion.png"
+config/icon="res://assets/UI/StoreLogo.scale-150.png"
 
 [input]
 
