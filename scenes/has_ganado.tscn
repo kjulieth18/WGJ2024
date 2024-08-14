@@ -1,0 +1,107 @@
+[gd_scene load_steps=10 format=3 uid="uid://bxd8iskl6ipqp"]
+
+[ext_resource type="Script" path="res://scripts/credits.gd" id="1_wp2mh"]
+[ext_resource type="AudioStream" uid="uid://cypax20f4ulxn" path="res://assets/Sounds/TEMA B - FINAL.wav" id="2_3gma8"]
+[ext_resource type="Texture2D" uid="uid://boykmr4cn7g6m" path="res://assets/terrain/game_background_4/game_background_4.png" id="3_wft1c"]
+[ext_resource type="PackedScene" uid="uid://b7s2gppaih8bq" path="res://scenes/button_play.tscn" id="4_8dn6j"]
+[ext_resource type="AudioStream" uid="uid://lla8u6nx8jox" path="res://assets/Sounds/sfx_burbuja_boca.wav" id="7_v2wce"]
+[ext_resource type="FontFile" uid="uid://cd8n2gliuelxv" path="res://assets/fonts/KIdDOS-Regular.ttf" id="8_3bvvf"]
+[ext_resource type="Texture2D" uid="uid://bvnympl3kaxc4" path="res://assets/UI/rocioavatar.png" id="9_f3ocy"]
+[ext_resource type="Texture2D" uid="uid://qldvp4gob2jl" path="res://assets/UI/karenavatar.png" id="10_ltcfj"]
+[ext_resource type="Texture2D" uid="uid://do5imvcp5ulw0" path="res://assets/UI/daniavatar.png" id="11_6ucej"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 31.0
+offset_right = 31.0
+script = ExtResource("1_wp2mh")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_3gma8")
+volume_db = 4.952
+autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -304.0
+offset_top = -171.0
+offset_right = 1496.0
+offset_bottom = 1989.0
+texture = ExtResource("3_wft1c")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Button_OST _ SFX" parent="." instance=ExtResource("4_8dn6j")]
+layout_mode = 1
+anchors_preset = 7
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 295.0
+offset_top = 13.0
+offset_right = 804.0
+offset_bottom = 518.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Congratulations /Felicidades
+
+
+
+
+
+
+Loup , the werewolf has finally become human.
+Loup ha logrado convertirse en humano 
+gracias a las pociones que recogiste."
+script = null
+
+[node name="Button_MainMenu" parent="." instance=ExtResource("4_8dn6j")]
+layout_mode = 1
+anchors_preset = 7
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 979.0
+offset_top = 569.0
+offset_right = 1091.0
+offset_bottom = 616.0
+grow_vertical = 0
+text = "Menu"
+script = null
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_v2wce")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 531.0
+offset_right = 913.0
+offset_bottom = 732.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_3bvvf")
+theme_override_font_sizes/font_size = 48
+text = "Check out the next level game updates in 
+https://karenova18.itch.io/potion-quest
+
+
+"
+
+[node name="Rocioavatar" type="Sprite2D" parent="."]
+position = Vector2(400, 239)
+scale = Vector2(0.227734, 0.227734)
+texture = ExtResource("9_f3ocy")
+
+[node name="Karenavatar" type="Sprite2D" parent="."]
+position = Vector2(551, 235)
+scale = Vector2(0.225781, 0.225781)
+texture = ExtResource("10_ltcfj")
+
+[node name="Daniavatar" type="Sprite2D" parent="."]
+position = Vector2(705, 234)
+scale = Vector2(0.20625, 0.20625)
+texture = ExtResource("11_6ucej")
+
+[connection signal="mouse_entered" from="Button_OST _ SFX" to="." method="_on_button_ost___sfx_mouse_entered"]
+[connection signal="mouse_entered" from="Button_MainMenu" to="." method="_on_button_main_menu_mouse_entered"]
+[connection signal="pressed" from="Button_MainMenu" to="." method="_on_button_main_menu_pressed"]

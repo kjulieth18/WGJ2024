@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwvkamqjoqtxi"]
+[gd_scene load_steps=8 format=3 uid="uid://bwvkamqjoqtxi"]
 
 [ext_resource type="Script" path="res://UI.gd" id="1_g80s6"]
 [ext_resource type="FontFile" uid="uid://cd8n2gliuelxv" path="res://assets/fonts/KIdDOS-Regular.ttf" id="2_xiydp"]
 [ext_resource type="Texture2D" uid="uid://bj52kslvwi8y7" path="res://assets/UI/Button.png" id="3_xmbcr"]
 [ext_resource type="AudioStream" uid="uid://lla8u6nx8jox" path="res://assets/Sounds/sfx_burbuja_boca.wav" id="5_bhdpr"]
 [ext_resource type="PackedScene" uid="uid://b7s2gppaih8bq" path="res://scenes/button_play.tscn" id="6_o2u5u"]
+[ext_resource type="PackedScene" uid="uid://bhrtbf1cxjd2b" path="res://scenes/boton_ganar.tscn" id="6_teai4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_m407i"]
 font_size = 30
@@ -59,5 +60,12 @@ script = null
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_bhdpr")
 
+[node name="boton_ganar" parent="." instance=ExtResource("6_teai4")]
+offset_left = 859.0
+offset_top = 587.0
+offset_right = 1139.0
+offset_bottom = 635.0
+
 [connection signal="mouse_entered" from="Button_MainMenu" to="." method="_on_button_main_menu_mouse_entered"]
 [connection signal="pressed" from="Button_MainMenu" to="." method="_on_button_main_menu_pressed"]
+[connection signal="pressed" from="boton_ganar" to="." method="_on_boton_ganar_pressed"]

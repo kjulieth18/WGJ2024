@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://bhrtbf1cxjd2b"]
+
+[ext_resource type="Script" path="res://boton_ganar.gd" id="1_opbkj"]
+[ext_resource type="Texture2D" uid="uid://do0m1pqm2ake8" path="res://assets/UI/Button-2.png" id="2_lf05t"]
+[ext_resource type="Texture2D" uid="uid://dhu2oejuvkhmb" path="res://assets/UI/Button-1.png" id="3_1np6k"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a75mu"]
+texture = ExtResource("2_lf05t")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3mj4y"]
+texture = ExtResource("3_1np6k")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bmi7a"]
+
+[node name="boton_ganar" type="Button"]
+offset_left = 1.0
+offset_right = 112.0
+offset_bottom = 37.0
+script = ExtResource("1_opbkj")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_a75mu")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3mj4y")
+text = "Ve al portal morado. 
+Completa las 10 pociones y haz click."
+
+[node name="Area2D" type="Area2D" parent="Button"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button/Area2D"]
+position = Vector2(-1, -3)
+shape = SubResource("RectangleShape2D_bmi7a")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

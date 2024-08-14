@@ -141,4 +141,31 @@ position = Vector2(539, -455)
 [node name="portal_sound" parent="portal" index="3"]
 position = Vector2(987, -495)
 
+[node name="Area2Dfruit2" parent="." instance=ExtResource("5_pw6ed")]
+position = Vector2(-93, 313)
+
+[node name="Area2Dfruit3" parent="." instance=ExtResource("5_pw6ed")]
+position = Vector2(101, 190)
+
+[node name="Area2Dfruit4" parent="." instance=ExtResource("5_pw6ed")]
+position = Vector2(361, -267)
+
+[node name="Area2Dfruit5" parent="." instance=ExtResource("5_pw6ed")]
+position = Vector2(-536, 242)
+
+[node name="Area2Dfruit6" parent="." instance=ExtResource("5_pw6ed")]
+position = Vector2(644, 24)
+
+[node name="Area2Dfruit7" parent="." instance=ExtResource("5_pw6ed")]
+position = Vector2(-666, 617)
+
+[node name="Area2Dfruit8" parent="." instance=ExtResource("5_pw6ed")]
+position = Vector2(-134, 829)
+
+[node name="Area2Dfruit9" parent="." instance=ExtResource("5_pw6ed")]
+position = Vector2(269, 756)
+
+[node name="Area2Dfruit10" parent="." instance=ExtResource("5_pw6ed")]
+position = Vector2(705, 834)
+
 [editable path="portal"]
